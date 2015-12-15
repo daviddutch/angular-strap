@@ -3125,7 +3125,7 @@
           return $dateFormatter.formatDate(date, format, lang);
         };
         var dateParser = $dateParser({
-          format: options.dateFormat,
+          format: options.modelDateFormat || options.dateFormat,
           lang: lang,
           strict: options.strictFormat
         });
@@ -3251,7 +3251,7 @@
           return $dateFormatter.formatDate(date, format, lang);
         };
         var dateParser = $dateParser({
-          format: options.modelDateFormat || options.dateFormat,
+          format: options.dateFormat,
           lang: lang,
           strict: options.strictFormat
         });
