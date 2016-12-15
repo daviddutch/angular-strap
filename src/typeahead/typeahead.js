@@ -252,6 +252,7 @@ angular.module('mgcrea.ngStrap.typeahead', ['mgcrea.ngStrap.tooltip', 'mgcrea.ng
           scope.$modelValue = newValue; // Publish modelValue on scope for custom templates
           parsedOptions.valuesFn(scope, controller)
             .then(function(values) {
+              if(!options) { return; }
               // Prevent input with no future prospect if selectMode is truthy
               // @TODO test selectMode
               if (options.selectMode && !values.length && newValue.length > 0) {
