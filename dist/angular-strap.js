@@ -404,11 +404,13 @@
           scope.$emit(options.prefixEvent + '.hide.before', $tooltip);
           _blur = blur;
           _tipToHide = tipElement;
-          if (angular.version.minor <= 2) {
-            $animate.leave(tipElement, leaveAnimateCallback);
-          } else {
-            $animate.leave(tipElement).then(leaveAnimateCallback);
-          }
+		  if (tipElement) {
+			  if (angular.version.minor <= 2) {
+				$animate.leave(tipElement, leaveAnimateCallback);
+			  } else {
+				$animate.leave(tipElement).then(leaveAnimateCallback);
+			  }
+		  }
           $tooltip.$isShown = scope.$isShown = false;
           safeDigest(scope);
           if (options.keyboard && tipElement !== null) {
