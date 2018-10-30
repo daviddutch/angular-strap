@@ -328,7 +328,7 @@ angular.module('mgcrea.ngStrap.datepicker', [
           return $dateFormatter.formatDate(date, format, lang);
         };
 
-        var dateParser = $dateParser({format: options.dateFormat, lang: lang, strict: options.strictFormat});
+        var dateParser = $dateParser({format: options.modelDateFormat || options.dateFormat, lang: lang, strict: options.strictFormat});
 
         // Visibility binding support
         if (attr.bsShow) {

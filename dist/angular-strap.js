@@ -3657,7 +3657,7 @@
           return $dateFormatter.formatDate(date, format, lang);
         };
         var dateParser = $dateParser({
-          format: options.dateFormat,
+          format: options.modelDateFormat || options.dateFormat,
           lang: lang,
           strict: options.strictFormat
         });
